@@ -8,8 +8,11 @@ export default function RootLayout({ children }) {
       <head>
         <title>Penayo Propiedades</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo-penayo.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <meta property="og:title" content="Penayo Propiedades" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/logo-penayo.png" />
       </head>
       <body>
         <>

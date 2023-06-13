@@ -1,12 +1,19 @@
 "use client";
 import { useState } from "react";
+import Cookies from "universal-cookie";
 
 export default function TypeForm() {
-  const [active, setActive] = useState("Comprar");
+  const cookies = new Cookies();
+  const [active, setActive] = useState(
+    cookies.get("searchParams")?.tipo || "Comprar"
+  );
 
   const tipos = ["Comprar", "Alquilar"];
 
   const handleClick = (tipo) => {
+    const cookie = cookies.get("searchParams");
+    cookies.set("searchParams", { ...cookie, tipo });
+
     setActive(tipo);
   };
 

@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="footer p-5 bg-base-300 text-base-content">
       <div>
-        <Image src="/logo-penayo.png" width={150} height={150} />
+        <Image src="/logo-penayo.png" alt="logo" width={150} height={150} />
       </div>
       <div>
         <span className="footer-title">Dirección</span>

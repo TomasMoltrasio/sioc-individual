@@ -2,11 +2,7 @@ import CardDwelling from "@/components/CardDwelling";
 import { fetchData } from "@/services/fetchData";
 
 export default async function DwellingSearch() {
-  const data = await fetchData({
-    page: {
-      perPage: 6,
-    },
-  });
+  const data = await fetchData();
 
   return (
     <section className="flex flex-col items-center justify-center w-full mt-10 p-4">

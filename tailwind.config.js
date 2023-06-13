@@ -21,7 +21,7 @@ module.exports = {
     themes: [
       {
         lemonade: {
-          ...require("daisyui/src/colors/themes")["[data-theme=lemonade]"],
+          ...require("daisyui/src/theming/themes")["[data-theme=lemonade]"],
           primary: "#8C0327",
         },
       },

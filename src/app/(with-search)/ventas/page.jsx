@@ -1,5 +1,5 @@
-import SaleDwellings from "@/containers/SaleDwellings";
+import RentDwellings from "@/containers/RentDwellings";
 
 export default function Ventas() {
-  return <SaleDwellings />;
+  return <RentDwellings />;
 }

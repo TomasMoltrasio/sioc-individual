@@ -1,17 +1,49 @@
-import CardDwelling from "@/components/CardDwelling";
-import { fetchData } from "@/services/fetchData";
+"use client";
+import ListDwellings from "./ListDwellings";
+import { fetchSWR } from "@/services/fetchSWR";
+import Cookies from "universal-cookie";
+import useSWR from "swr";
+import { usePathname } from "next/navigation";
 
-export default async function RentDwellings() {
+export default function RentDwellings() {
+  const cookie = new Cookies().get("searchParams");
+  const params = cookie ? cookie : {};
+  const pathname = usePathname();
+
   const searchParams = {
-    publicationType: "Alquiler",
+    publicationType: pathname === "/alquileres" ? "Alquiler" : "Venta",
+    ...params,
   };
-  const data = await fetchData(searchParams);
+
+  const { data, error, isLoading } = useSWR(searchParams, fetchSWR, {
+    revalidateOnFocus: false,
+  });
+
+  if (error) {
+    return <p>Ha ocurrido un error</p>;
+  }
+
+  const dwellings = data?.dwellings || [];
 
   return (
-    <div className="grid w-full lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-items-center mt-8 gap-[30px]">
-      {data?.dwellings?.map((dwelling) => (
-        <CardDwelling key={dwelling._id} dwelling={dwelling} />
-      ))}
-    </div>
+    <>
+      {isLoading ? (
+        <span className="loading loading-spinner loading-lg text-primary"></span>
+      ) : dwellings?.length > 0 ? (
+        <ListDwellings dwellings={dwellings} />
+      ) : (
+        <p
+          className="
+          text-center
+          text-primary
+          text-2xl
+          font-bold
+          mt-10
+        "
+        >
+          No se encontraron resultados
+        </p>
+      )}
+    </>
   );
 }
