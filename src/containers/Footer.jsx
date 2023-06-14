@@ -2,9 +2,24 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="footer p-5 bg-base-300 text-base-content">
-      <div>
-        <Image src="/logo-penayo.png" alt="logo" width={150} height={150} />
+    <footer className="footer p-3 bg-neutral text-neutral-content">
+      <div className="flex justify-between w-full lg:justify-center">
+        <Image
+          src="/logo-penayo-invertido.png"
+          alt="logo-penayo"
+          height={100}
+          width={160}
+          className="lg:mr-4 lg:w-36"
+        />
+        <a className="lg:hidden" href="https://www.sioc.com.ar" target="_blank">
+          <Image
+            src="/logo-sioc.svg"
+            alt="logo-sioc"
+            width={100}
+            height={100}
+            className="lg:w-20"
+          />
+        </a>
       </div>
       <div>
         <span className="footer-title">Dirección</span>
@@ -38,6 +53,19 @@ export default function Footer() {
           info@penayopropiedades.com.ar
         </a>
       </div>
+      <a
+        className="hidden lg:block"
+        href="https://www.sioc.com.ar"
+        target="_blank"
+      >
+        <Image
+          src="/logo-sioc.svg"
+          alt="logo-sioc"
+          width={100}
+          height={100}
+          className="lg:w-20"
+        />
+      </a>
     </footer>
   );
 }

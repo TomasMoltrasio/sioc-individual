@@ -2,7 +2,13 @@ import CardDwelling from "@/components/CardDwelling";
 import { fetchData } from "@/services/fetchData";
 
 export default async function DwellingSearch() {
-  const data = await fetchData();
+  const searchParams = {
+    page: {
+      pageNumber: 1,
+      perPage: 6,
+    },
+  };
+  const data = await fetchData(searchParams);
 
   return (
     <section className="flex flex-col items-center justify-center w-full mt-10 p-4">
@@ -12,7 +18,7 @@ export default async function DwellingSearch() {
         </h1>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">
-        {data?.dwellings?.slice(0, 6).map((dwelling) => (
+        {data?.dwellings?.map((dwelling) => (
           <CardDwelling key={dwelling._id} dwelling={dwelling} />
         ))}
       </div>

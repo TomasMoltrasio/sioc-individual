@@ -30,7 +30,7 @@ export default function Navbar() {
       <div className="justify-between mx-auto px-4 lg:max-w-7xl md:items-center md:flex xl:px-0">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <Link href="#">
+            <Link onClick={() => setNavbar(false)} href="/">
               <Image src="/logo-penayo.png" alt="logo" width={90} height={90} />
             </Link>
             <div className="md:hidden">
@@ -92,6 +92,7 @@ export default function Navbar() {
                   duration-300
                   ease-in-out"
                     href={url}
+                    onClick={() => setNavbar(false)}
                   >
                     {name}
                   </Link>
