@@ -63,7 +63,7 @@ export default function Footer() {
           alt="logo-sioc"
           width={100}
           height={100}
-          className="lg:w-20"
+          className="lg:w-24"
         />
       </a>
     </footer>

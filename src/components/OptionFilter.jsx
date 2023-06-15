@@ -39,13 +39,13 @@ export default function OptionFilter({ selecciones }) {
   return (
     <li>
       <details>
-        <summary>{name}</summary>
+        <summary className="text-lg">{name}</summary>
         <ul>
           {options.map((option) => (
             <li key={option}>
               <div className="flex w-full">
                 <label className="label cursor-pointer w-full">
-                  <span className="label-text mr-2">{option}</span>
+                  <span className="label-text mr-2 ">{option}</span>
                   <input
                     type="checkbox"
                     className="checkbox checkbox-primary"
