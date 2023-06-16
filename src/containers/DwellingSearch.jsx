@@ -17,7 +17,7 @@ export default async function DwellingSearch() {
           Últimas Propiedades
         </h1>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-8 w-full md:w-10/12 gap-[30px]">
         {data?.dwellings?.map((dwelling) => (
           <CardDwelling key={dwelling._id} dwelling={dwelling} />
         ))}

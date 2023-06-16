@@ -76,6 +76,13 @@ export default async function DwellingContainer({ id }) {
           />
         </div>
       </div>
+      <div className="divider"></div>
+      <div className="flex">
+        <h3 className="text-2xl font-semibold text-center text-slate-900">
+          ¿Querés saber más sobre esta propiedad?
+        </h3>
+      </div>
+
       <ContactDwelling phone={data?.dwelling?.createdBy?.whatsapp} />
     </div>
   );

@@ -90,7 +90,7 @@ export default function DwellingCharacter({ subtype, spaces }) {
           </p>
         </div>
       ) : null}
-      {spaces?.garage.length > 3 ? (
+      {spaces?.garage?.length > 3 ? (
         <div
           className="
             flex
@@ -124,7 +124,7 @@ export default function DwellingCharacter({ subtype, spaces }) {
           </p>
         </div>
       ) : null}
-      {spaces.floors > 1 ? (
+      {spaces?.floors > 1 ? (
         <div
           className="
                 flex
@@ -141,7 +141,7 @@ export default function DwellingCharacter({ subtype, spaces }) {
           </p>
         </div>
       ) : null}
-      {spaces.laundryRoom.length > 2 ? (
+      {spaces?.laundryRoom?.length > 2 ? (
         <div
           className="
                 flex
