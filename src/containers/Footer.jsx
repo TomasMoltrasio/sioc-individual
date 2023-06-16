@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="footer p-3 bg-neutral text-neutral-content">
-      <div className="flex justify-between w-full lg:justify-center">
+      <div className="flex justify-between h-full items-center w-full lg:justify-center">
         <Image
           src="/logo-penayo-invertido.png"
           alt="logo-penayo"
@@ -21,7 +21,7 @@ export default function Footer() {
           />
         </a>
       </div>
-      <div>
+      <div className="flex flex-col justify-center items-center w-full">
         <span className="footer-title">Dirección</span>
         <a
           href="https://goo.gl/maps/kBWSa9VeUPjGkK6L6?coh=178572&entry=tt"
@@ -32,7 +32,7 @@ export default function Footer() {
           Calle 4 N° 799 La Plata, Buenos Aires
         </a>
       </div>
-      <div>
+      <div className="flex flex-col justify-center items-center w-full">
         <span className="footer-title">Teléfonos</span>
         <a href="tel:+54 221 425-0969" className="link link-hover">
           (221) 425-0969
@@ -44,7 +44,7 @@ export default function Footer() {
           (221) 425-0971
         </a>
       </div>
-      <div>
+      <div className="flex flex-col justify-center items-center w-full">
         <span className="footer-title">Email</span>
         <a
           href="mailto:info@penayopropiedades.com.ar"
@@ -53,19 +53,21 @@ export default function Footer() {
           info@penayopropiedades.com.ar
         </a>
       </div>
-      <a
-        className="hidden lg:block"
-        href="https://www.sioc.com.ar"
-        target="_blank"
-      >
-        <Image
-          src="/logo-sioc.svg"
-          alt="logo-sioc"
-          width={100}
-          height={100}
-          className="lg:w-24"
-        />
-      </a>
+      <div className="flex justify-between h-full items-center w-full lg:justify-center">
+        <a
+          className="hidden lg:block"
+          href="https://www.sioc.com.ar"
+          target="_blank"
+        >
+          <Image
+            src="/logo-sioc.svg"
+            alt="logo-sioc"
+            width={100}
+            height={100}
+            className="lg:w-24"
+          />
+        </a>
+      </div>
     </footer>
   );
 }

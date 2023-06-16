@@ -2,6 +2,13 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/containers/Footer";
 
+export const metadata = {
+  title: "Penayo Propiedades",
+  description: "Penayo Propiedades",
+  image: "/logo-penayo.png",
+  // ...other metadata
+};
+
 export default function RootLayout({ children }) {
   return (
     <html data-theme="lemonade" lang="es">

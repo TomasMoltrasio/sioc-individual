@@ -11,7 +11,7 @@ const Mapa = ({ lat, alt }) => {
       center={[lat, alt]}
       zoom={16}
       scrollWheelZoom={false}
-      className="h-[300px] md:h-[570px] w-full"
+      className="h-[300px] md:h-[570px] w-full rounded-md shadow-md border-2 border-gray-300"
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
