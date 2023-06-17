@@ -46,3 +46,10 @@ export const selecciones = [
     ].sort((a, b) => a.localeCompare(b, "es", { sensitivity: "base" })),
   },
 ];
+
+export const option = [
+  "Menor precio",
+  "Mayor precio",
+  "Mas recientes",
+  "Mas antiguos",
+];

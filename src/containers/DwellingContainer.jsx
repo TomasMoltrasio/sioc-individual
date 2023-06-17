@@ -6,6 +6,8 @@ import dynamic from "next/dynamic";
 import DwellingCharacter from "@/components/DwellingCharacter";
 import DwellingFeatures from "@/components/DwellingFeatures";
 import ContactDwelling from "@/components/ContactDwelling";
+import Link from "next/link";
+import { TbArrowBackUp } from "react-icons/tb";
 
 export default async function DwellingContainer({ id }) {
   const data = await fetchDwelling(id);
@@ -26,6 +28,19 @@ export default async function DwellingContainer({ id }) {
 
   return (
     <div className="flex flex-col items-center justify-center w-full">
+      <div className="flex flex-row items-center justify-start w-full p-1">
+        <Link
+          className="text-sm font-semibold text-left text-slate-900 flex flex-row items-center justify-start gap-1"
+          href={
+            data?.dwelling?.publicationType === "Alquiler"
+              ? "/alquileres"
+              : "/ventas"
+          }
+        >
+          <TbArrowBackUp className="text-xl font-semibold text-left text-slate-900" />
+          Volver
+        </Link>
+      </div>
       <div className="flex flex-col md:flex-row items-center justify-center w-full">
         <LightboxContainer image={data?.dwelling?.images} />
       </div>

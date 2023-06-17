@@ -1,4 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import {
+  HiOutlinePhone,
+  HiOutlineAtSymbol,
+  HiOutlineMapPin,
+} from "react-icons/hi2";
 
 export default function Footer() {
   return (
@@ -27,29 +34,47 @@ export default function Footer() {
           href="https://goo.gl/maps/kBWSa9VeUPjGkK6L6?coh=178572&entry=tt"
           target="_blank"
           rel="noopener noreferrer"
-          className="link link-hover"
+          className="link link-hover flex justify-center items-center"
         >
+          <HiOutlineMapPin className="inline-block mr-2" />
           Calle 4 N° 799 La Plata, Buenos Aires
         </a>
       </div>
       <div className="flex flex-col justify-center items-center w-full">
         <span className="footer-title">Teléfonos</span>
-        <a href="tel:+54 221 425-0969" className="link link-hover">
-          (221) 425-0969
+        <a
+          href="
+        whatsapp://send?text=Hola! Vengo de la pagina web&phone=+5492216689088"
+          className="link link-hover flex justify-center items-center"
+        >
+          <HiOutlinePhone className="inline-block mr-2" />
+          +54 9 221 668-9088
         </a>
-        <a href="tel:+54 221 425-0970" className="link link-hover">
-          (221) 425-0970
+        <a
+          href="
+        whatsapp://send?text=Hola! Vengo de la pagina web&phone=+5492215461307"
+          className="link link-hover flex justify-center items-center"
+        >
+          <HiOutlinePhone className="inline-block mr-2" />
+          +54 9 221 546-1307
         </a>
-        <a href="tel:+54 221 425-0971" className="link link-hover">
-          (221) 425-0971
+        <a
+          href="
+        whatsapp://send?text=Hola! Vengo de la pagina web&phone=+5492216431287"
+          className="link link-hover flex justify-center items-center"
+        >
+          {" "}
+          <HiOutlinePhone className="inline-block mr-2" />
+          +54 9 221 643-1287
         </a>
       </div>
       <div className="flex flex-col justify-center items-center w-full">
         <span className="footer-title">Email</span>
         <a
           href="mailto:info@penayopropiedades.com.ar"
-          className="link link-hover"
+          className="link link-hover flex justify-center items-center"
         >
+          <HiOutlineAtSymbol className="inline-block mr-2" />
           info@penayopropiedades.com.ar
         </a>
       </div>

@@ -21,7 +21,6 @@ export default function OptionFilter({ selecciones }) {
       if (cookie === undefined) return;
       const searchParams = substractOptions(name, e.target.name, cookie);
       cookies.set("searchParams", { ...cookie, ...searchParams });
-      console.log(cookie[transformName(name)]);
       cookie[transformName(name)].length === 0 &&
         delete cookie[transformName(name)];
       cookies.set("searchParams", { ...cookie });

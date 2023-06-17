@@ -11,7 +11,6 @@ export const fetchSWR = async (searchParams) => {
       ...searchParams,
       agencyId: AGENCY_ID,
       agencyDwellings: "true",
-      orderKeyByDate: "newest",
     },
   };
   const url = `${API_URL}${API}`;

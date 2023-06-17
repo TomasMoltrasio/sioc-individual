@@ -7,6 +7,7 @@ export default async function DwellingSearch() {
       pageNumber: 1,
       perPage: 6,
     },
+    orderKeyByDate: "newest",
   };
   const data = await fetchData(searchParams);
 

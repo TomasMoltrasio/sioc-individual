@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
       /(<([^>]+)>)/gi,
       ""
     ),
-    image: product?.dwelling?.images[0]?.url,
+    image: product?.dwelling?.images[0]?.secure_url,
     // ...other metadata
     openGraph: {
       type: "website",
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }) {
         /(<([^>]+)>)/gi,
         ""
       ),
-      image: product?.dwelling?.images[0]?.url,
+      image: product?.dwelling?.images[0]?.secure_url,
     },
     twitter: {
       handle: "@handle",

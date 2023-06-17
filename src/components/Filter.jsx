@@ -1,6 +1,9 @@
+"use client";
+
 import OptionFilter from "./OptionFilter";
-import { selecciones } from "../services/selecciones";
+import { selecciones, option } from "../services/selecciones";
 import ButtonFilter from "./ButtonFilter";
+import SelectOrder from "./SelectOrder";
 
 export default function Filter() {
   return (
@@ -9,7 +12,9 @@ export default function Filter() {
         {selecciones.map((seleccion) => (
           <OptionFilter key={seleccion.name} selecciones={seleccion} />
         ))}
+        <SelectOrder options={option} />
       </ul>
+
       <ButtonFilter />
     </>
   );
