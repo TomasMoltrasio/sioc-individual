@@ -15,14 +15,14 @@ export default function Footer() {
           src="/logo-penayo-invertido.png"
           alt="logo-penayo"
           height={100}
-          width={160}
+          width={140}
           className="lg:mr-4 lg:w-36"
         />
         <a className="lg:hidden" href="https://www.sioc.com.ar" target="_blank">
           <Image
-            src="/logo-sioc.svg"
+            src="/siocLogoFooter.webp"
             alt="logo-sioc"
-            width={100}
+            width={140}
             height={100}
             className="lg:w-20"
           />
@@ -85,11 +85,10 @@ export default function Footer() {
           target="_blank"
         >
           <Image
-            src="/logo-sioc.svg"
+            src="/siocLogoFooter.webp"
             alt="logo-sioc"
-            width={100}
+            width={160}
             height={100}
-            className="lg:w-24"
           />
         </a>
       </div>

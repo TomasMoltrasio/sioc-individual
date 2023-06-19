@@ -3,7 +3,6 @@ import Cookies from "universal-cookie";
 
 export default function SelectOrder({ options }) {
   const cookies = new Cookies();
-  const cookie = cookies.get("searchParams");
 
   const transformName = (name) => {
     switch (name) {
@@ -20,6 +19,7 @@ export default function SelectOrder({ options }) {
 
   const handleChange = (e) => {
     const searchParams = transformName(e.target.value);
+    const cookie = cookies.get("searchParams");
     cookies.set("searchParams", { ...cookie, ...searchParams });
   };
 

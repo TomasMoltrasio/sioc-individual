@@ -39,7 +39,7 @@ export default function CardDwelling({ dwelling }) {
         </div>
         <div className="p-4">
           <div className="pb-6">
-            <h3 className="text-lg hover:text-green-600 font-medium ease-in-out duration-500">
+            <h3 className="text-lg hover:text-primary font-medium ease-in-out duration-500">
               {`${subtype} en ${publicationType}`}
             </h3>
           </div>
@@ -50,7 +50,7 @@ export default function CardDwelling({ dwelling }) {
             </h3>
           </div>
 
-          <ul className="py-6 border-y border-slate-100 text-base flex items-center list-none">
+          <ul className="py-6 border-y border-slate-100 text-base flex items-center list-none min-h-[75px]">
             {features?.coveredSurface >= 0 ? (
               <li className="flex items-center me-4">
                 <IoContract className="me-2 text-primary text-xl" />

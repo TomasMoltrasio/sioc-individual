@@ -26,8 +26,9 @@ export default function TypeForm() {
           className={`flex flex-row items-center cursor-pointer text-slate-900 justify-center w-full px-2 ${
             active === tipo
               ? "bg-primary-focus p-2 rounded-lg text-white"
-              : "bg-white"
-          }`}
+              : "bg-white hover:bg-primary-focus hover:text-white hover:p-2 hover:bg-opacity-50 hover:rounded-lg transition duration-100 ease-linear"
+          } 
+          `}
         >
           {tipo}
         </li>

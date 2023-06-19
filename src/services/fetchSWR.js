@@ -8,6 +8,7 @@ export const fetchSWR = async (searchParams) => {
   const API = "searchAll";
   const body = {
     searchParams: {
+      orderKeyByDate: "newest",
       ...searchParams,
       agencyId: AGENCY_ID,
       agencyDwellings: "true",

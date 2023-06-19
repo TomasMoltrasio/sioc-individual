@@ -11,7 +11,7 @@ export default function DwellingFeatures({ features }) {
         flex-wrap
       "
     >
-      {features?.lotSurface >= 0 ? (
+      {features?.lotSurface > 0 ? (
         <div
           className="
                 flex
@@ -36,7 +36,7 @@ export default function DwellingFeatures({ features }) {
           </div>
         </div>
       ) : null}
-      {features?.coveredSurface >= 0 ? (
+      {features?.coveredSurface > 0 ? (
         <div
           className="   
                 flex
@@ -61,7 +61,7 @@ export default function DwellingFeatures({ features }) {
           </div>
         </div>
       ) : null}
-      {features?.lotLength >= 0 ? (
+      {features?.lotLength > 0 ? (
         <div
           className="   
                 flex
@@ -86,7 +86,7 @@ export default function DwellingFeatures({ features }) {
           </div>
         </div>
       ) : null}
-      {features?.lotWidth >= 0 ? (
+      {features?.lotWidth > 0 ? (
         <div
           className="   
                 flex

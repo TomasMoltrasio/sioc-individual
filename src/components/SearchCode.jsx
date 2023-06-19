@@ -2,10 +2,11 @@
 
 import { TiArrowRightThick } from "react-icons/ti";
 import { useState } from "react";
-import Router from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function SearchCode() {
   const [codigo, setCodigo] = useState(0);
+  const router = useRouter();
 
   const handleChange = (e) => {
     setCodigo(e.target.value);
@@ -13,7 +14,7 @@ export default function SearchCode() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    Router.push(`/dwelling/${codigo}`);
+    router.push(`/dwelling/${codigo}`);
   };
 
   return (
@@ -29,6 +30,7 @@ export default function SearchCode() {
         />
         <button
           onClick={(e) => handleSubmit(e)}
+          disabled={codigo.length <= 4}
           className="btn join-item rounded-r-full bg-primary text-base-100"
         >
           <TiArrowRightThick />
