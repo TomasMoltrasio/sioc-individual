@@ -74,7 +74,9 @@ export default function RentDwellings() {
           </button>
           {new Array(Math.ceil(total / cantPerPage)).fill(0).map((_, i) => (
             <input
-              className="join-item btn btn-square"
+              className={`join-item btn btn-square ${
+                i + 1 === page ? "" : "hidden lg:inline-flex"
+              }`}
               type="radio"
               name="options"
               aria-label={`${i + 1}`}
@@ -83,6 +85,7 @@ export default function RentDwellings() {
               key={i}
             />
           ))}
+
           <button
             disabled={page === Math.ceil(total / 9)}
             onClick={(e) => nextPage(e)}

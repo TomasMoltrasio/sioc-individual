@@ -9,6 +9,8 @@ export default function FormEmail() {
   const [telefono, setTelefono] = useState("");
   const [message, setMessage] = useState("");
   const [enviado, setEnviado] = useState(false);
+  const [emailError, setEmailError] = useState(true);
+  const [phoneError, setPhoneError] = useState(false);
   const router = useRouter();
 
   const handleSubmit = (e) => {
@@ -17,9 +19,6 @@ export default function FormEmail() {
     const res = sendEmail(email, name, message, telefono)
       .then((res) => {
         setEnviado(true);
-        setTimeout(() => {
-          setEnviado(false);
-        }, 5000);
       })
       .catch((err) => {
         console.log(err);
@@ -61,18 +60,21 @@ export default function FormEmail() {
       emailError.classList.remove("text-green-500");
       email.classList.add("border-red-500");
       email.classList.remove("border-green-500");
+      setEmailError(true);
     } else if (!emailValue.match(emailRegex)) {
       emailError.innerHTML = "El email no es valido";
       emailError.classList.add("text-red-500");
       emailError.classList.remove("text-green-500");
       email.classList.add("border-red-500");
       email.classList.remove("border-green-500");
+      setEmailError(true);
     } else {
       emailError.innerHTML = "El email es valido";
       emailError.classList.add("text-green-500");
       emailError.classList.remove("text-red-500");
       email.classList.add("border-green-500");
       email.classList.remove("border-red-500");
+      setEmailError(false);
     }
   };
 
@@ -87,18 +89,21 @@ export default function FormEmail() {
       phoneError.classList.remove("text-green-500");
       phone.classList.add("border-red-500");
       phone.classList.remove("border-green-500");
+      setPhoneError(false);
     } else if (!phoneValue.match(phoneRegex)) {
       phoneError.innerHTML = "El telefono no es valido";
       phoneError.classList.add("text-red-500");
       phoneError.classList.remove("text-green-500");
       phone.classList.add("border-red-500");
       phone.classList.remove("border-green-500");
+      setPhoneError(true);
     } else {
       phoneError.innerHTML = "El telefono es valido";
       phoneError.classList.add("text-green-500");
       phoneError.classList.remove("text-red-500");
       phone.classList.add("border-green-500");
       phone.classList.remove("border-red-500");
+      setPhoneError(false);
     }
   };
 
@@ -113,6 +118,7 @@ export default function FormEmail() {
           type="text"
           name="name"
           id="name"
+          disabled={enviado}
           placeholder="Ej: Juan Perez"
           onChange={(e) => handleName(e)}
           className={`block w-full p-3 rounded text-slate-900 bg-gray-100 border border-transparent focus:outline-none focus:border-gray-400 ${
@@ -127,6 +133,7 @@ export default function FormEmail() {
         <input
           type="email"
           name="email"
+          disabled={enviado}
           id="email"
           placeholder="Ej: ejemplo@gmail.com"
           onChange={(e) => handleEmail(e)}
@@ -142,6 +149,7 @@ export default function FormEmail() {
           type="tel"
           name="telefono"
           id="telefono"
+          disabled={enviado}
           placeholder="Ej: 2216689088"
           onChange={(e) => handleTelefono(e)}
           className={`block w-full p-3 rounded text-slate-900 bg-gray-100 border border-transparent focus:outline-none focus:border-gray-400 `}
@@ -156,6 +164,7 @@ export default function FormEmail() {
           name="message"
           id="message"
           rows="4"
+          disabled={enviado}
           placeholder="Ej: Hola, queria consultar por la propiedad de calle 4 n 799"
           onChange={(e) => handleMessage(e)}
           className={`block w-full p-3 rounded text-slate-900 bg-gray-100 border border-transparent focus:outline-none focus:border-gray-400 
@@ -167,14 +176,17 @@ export default function FormEmail() {
             disabled={
               email === "" ||
               name === "" ||
-              telefono === "" ||
               message === "" ||
+              emailError ||
+              phoneError ||
               enviado
             }
             onClick={handleSubmit}
-            className={
-              "btn btn-primary w-full ${enviado ? 'bg-green-500' : ''}"
-            }
+            className={`btn w-full ${
+              enviado
+                ? "disabled:btn-outline disabled:btn-secondary"
+                : "btn-primary"
+            }`}
           >
             {enviado ? "Enviado!" : "Enviar"}
           </button>

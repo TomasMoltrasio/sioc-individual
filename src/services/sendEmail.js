@@ -7,7 +7,7 @@ const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
 const privateKey = process.env.NEXT_PUBLIC_PRIVATE_KEY;
 const emailto = "tomymoltrasio@gmail.com";
 
-export const sendEmail = async (email, name, message, telefono) => {
+export const sendEmail = async (email, name, message, telefono = "") => {
   send(
     privateKey,
     templateId,

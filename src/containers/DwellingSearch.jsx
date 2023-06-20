@@ -14,9 +14,9 @@ export default async function DwellingSearch() {
   return (
     <section className="flex flex-col items-center justify-center w-full mt-10 p-4">
       <div className="flex flex-col items-center justify-center w-full">
-        <h1 className="text-xl md:text-4xl font-bold text-center text-slate-900">
+        <h2 className="text-xl font-sans md:text-4xl font-medium text-center text-slate-900">
           Últimas Propiedades
-        </h1>
+        </h2>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-8 w-full md:w-10/12 gap-[30px]">
         {data?.dwellings?.map((dwelling) => (

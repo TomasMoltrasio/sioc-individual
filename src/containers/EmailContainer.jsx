@@ -10,7 +10,7 @@ export default function EmailContainer() {
       <div className="lg:col-span-5 md:col-span-6">
         <div className="lg:me-5">
           <div className="bg-white  rounded-md shadow  p-6">
-            <h3 className="mb-6 text-2xl leading-normal text-slate-900 font-medium">
+            <h3 className="mb-3 text-2xl leading-normal text-slate-900 font-medium">
               Contactate con nosotros!
             </h3>
             <FormEmail />
