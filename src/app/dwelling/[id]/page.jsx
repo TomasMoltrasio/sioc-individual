@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
       /(<([^>]+)>)/gi,
       ""
     ),
-    image: product?.dwelling?.images[0]?.secure_url,
+    images: [product?.dwelling?.images[0]?.secure_url],
     // ...other metadata
     openGraph: {
       type: "website",
@@ -30,7 +30,16 @@ export async function generateMetadata({ params }) {
         /(<([^>]+)>)/gi,
         ""
       ),
-      image: product?.dwelling?.images[0]?.secure_url,
+      images: [
+        {
+          url: product?.dwelling?.images[0]?.secure_url,
+          width: 800,
+          height: 600,
+          alt: product?.dwelling?.address.streetNumber
+            ? `${product?.dwelling?.subtype} en ${product?.dwelling?.address.streetName} N°${product?.dwelling?.address.streetNumber}, ${product?.dwelling?.address.city}`
+            : `${product?.dwelling?.subtype} en ${product?.dwelling?.address.streetName}, ${product?.dwelling?.address.city}`,
+        },
+      ],
     },
     twitter: {
       handle: "@handle",

@@ -8,6 +8,7 @@ import DwellingFeatures from "@/components/DwellingFeatures";
 import ContactDwelling from "@/components/ContactDwelling";
 import Link from "next/link";
 import { TbArrowBackUp } from "react-icons/tb";
+import ButtonShare from "@/components/ButtonShare";
 
 export default async function DwellingContainer({ id }) {
   const data = await fetchDwelling(id);
@@ -53,9 +54,12 @@ export default async function DwellingContainer({ id }) {
               <h4 className="text-xl font-bold text-left text-slate-700 underline underline-offset-4 decoration-primary">
                 {data?.dwelling?.publicationType}
               </h4>
-              <h2 className="text-2xl md:text-4xl font-normal text-left text-slate-900">
-                {title}
-              </h2>
+              <div className="flex flex-col md:flex-row items-center justify-start h-full gap-2">
+                <h2 className="text-2xl md:text-4xl font-normal text-left text-slate-900">
+                  {title}
+                </h2>
+                <ButtonShare title={title} />
+              </div>
               <p className="text-xs font-normal text-left text-slate-900">
                 {`Cod: ${data?.dwelling?.siocId}`}
               </p>
@@ -80,7 +84,7 @@ export default async function DwellingContainer({ id }) {
                 spaces={data?.dwelling?.spaces}
               />
 
-              <div className="flex flex-col items-start justify-start w-full gap-1 p-2">
+              <div className="flex flex-col items-start justify-start w-full gap-1 pr-2 py-2">
                 <p
                   dangerouslySetInnerHTML={{ __html: description }}
                   className="text-base font-normal text-left text-slate-900 first-letter:uppercase"
