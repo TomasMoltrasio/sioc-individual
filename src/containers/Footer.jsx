@@ -14,10 +14,10 @@ export default function Footer() {
       <footer className="footer p-3 bg-neutral text-neutral-content">
         <div className="flex justify-between h-full items-center w-full lg:justify-center">
           <Image
-            src="/logo-penayo-invertido.png"
+            src="/logo-penayo-invertido.webp"
             alt="logo-penayo"
             height={100}
-            width={140}
+            width={160}
             className="lg:mr-4 lg:w-36"
           />
           <a
@@ -82,6 +82,13 @@ export default function Footer() {
           >
             <HiOutlineAtSymbol className="inline-block mr-2" />
             info@penayopropiedades.com.ar
+          </a>
+          <a
+            href="mailto:penayonegociosinmobiliarios@gmail.com"
+            className="link link-hover flex justify-center items-center"
+          >
+            <HiOutlineAtSymbol className="inline-block mr-2" />
+            penayonegociosinmobiliarios@gmail.com
           </a>
         </div>
         <div className="flex flex-col justify-center items-center w-full">
