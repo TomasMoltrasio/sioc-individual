@@ -27,8 +27,8 @@ export default function CardDwelling({ dwelling }) {
   };
 
   return (
-    <div className="group rounded-xl w-full cursor-pointer bg-white shadow hover:shadow-xl text-slate-900 overflow-hidden ease-in-out duration-500">
-      <Link href={`/dwelling/${siocId}`}>
+    <Link href={`/dwelling/${siocId}`}>
+      <div className="group rounded-xl w-full cursor-pointer bg-white shadow hover:shadow-xl text-slate-900 overflow-hidden ease-in-out duration-500">
         <div className="relative w-full h-[250px]">
           <Image
             src={images[0].secure_url}
@@ -89,7 +89,7 @@ export default function CardDwelling({ dwelling }) {
             )}
           </p>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }

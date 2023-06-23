@@ -9,6 +9,8 @@ import ContactDwelling from "@/components/ContactDwelling";
 import Link from "next/link";
 import { TbArrowBackUp } from "react-icons/tb";
 import ButtonShare from "@/components/ButtonShare";
+import CharacteristicsDwelling from "@/components/CharacteristicsDwelling";
+import ServicesDwelling from "@/components/ServicesDwelling";
 
 export default async function DwellingContainer({ id }) {
   const data = await fetchDwelling(id);
@@ -58,7 +60,7 @@ export default async function DwellingContainer({ id }) {
                 <h2 className="text-2xl md:text-4xl font-normal text-left text-slate-900">
                   {title}
                 </h2>
-                <ButtonShare title={title} />
+                <ButtonShare />
               </div>
               <p className="text-xs font-normal text-left text-slate-900">
                 {`Cod: ${data?.dwelling?.siocId}`}
@@ -91,6 +93,11 @@ export default async function DwellingContainer({ id }) {
                 ></p>
               </div>
               <DwellingFeatures features={data?.dwelling?.features} />
+              <div className="flex flex-col lg:flex-row items-start justify-start w-full gap-2 py-2 pr-2">
+                <CharacteristicsDwelling features={data?.dwelling?.features} />
+                <div className="divider lg:divider-horizontal"></div>
+                <ServicesDwelling services={data?.dwelling?.services} />
+              </div>
             </div>
             <div className="flex h-full w-full md:w-1/2">
               <Mapa

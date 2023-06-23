@@ -30,7 +30,7 @@ export default function SearchCode() {
         />
         <button
           onClick={(e) => handleSubmit(e)}
-          disabled={codigo.length <= 4}
+          disabled={codigo.toString().length <= 4}
           className="btn join-item rounded-r-full bg-primary text-base-100"
         >
           <TiArrowRightThick />
