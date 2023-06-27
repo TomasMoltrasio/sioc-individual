@@ -7,10 +7,12 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function RentDwellings() {
-  const cookie = new Cookies().get("searchParams");
+  const cookies = new Cookies();
+  const cookie = cookies.get("searchParams");
+  const cookiePage = Number(cookies.get("page")) || 1;
   const params = cookie ? cookie : {};
   const pathname = usePathname();
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(cookiePage);
   const cantPerPage = 12;
 
   const searchParams = {
@@ -40,6 +42,7 @@ export default function RentDwellings() {
     e.preventDefault();
     if (page > 1) {
       setPage(page - 1);
+      cookies.set("page", page - 1, { path: "/" });
       window.scrollTo(0, 0);
     }
   };
@@ -48,6 +51,7 @@ export default function RentDwellings() {
     e.preventDefault();
     if (page < Math.ceil(total / cantPerPage)) {
       setPage(page + 1);
+      cookies.set("page", page + 1, { path: "/" });
       window.scrollTo(0, 0);
     }
   };
@@ -70,7 +74,7 @@ export default function RentDwellings() {
             onClick={(e) => backPage(e)}
             className="join-item btn btn-primary-content"
           >
-            «
+            «<p className="lg:hidden inline-flex text-sm">Ant</p>
           </button>
           {new Array(Math.ceil(total / cantPerPage)).fill(0).map((_, i) => (
             <input
@@ -81,7 +85,11 @@ export default function RentDwellings() {
               name="options"
               aria-label={`${i + 1}`}
               checked={page === i + 1}
-              onChange={() => setPage(i + 1)}
+              onChange={() => {
+                setPage(i + 1);
+                cookies.set("page", i + 1, { path: "/" });
+                window.scrollTo(0, 0);
+              }}
               key={i}
             />
           ))}
@@ -91,7 +99,7 @@ export default function RentDwellings() {
             onClick={(e) => nextPage(e)}
             className="join-item btn btn-primary-content "
           >
-            »
+            <p className="lg:hidden inline-flex text-sm">Sig</p>»
           </button>
         </div>
       )}
