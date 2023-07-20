@@ -12,7 +12,7 @@ export default function HomeContainer() {
       <section
         className="hero relative min-h-[80vh] rounded-3xl"
         style={{
-          backgroundImage: `url("/home-casa.jpg")`,
+          backgroundImage: `url("/penayo-fondo.webp")`,
         }}
       >
         <div className="hero-overlay bg-opacity-60 rounded-3xl"></div>
